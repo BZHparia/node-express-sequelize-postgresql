@@ -14,10 +14,9 @@ const sequelize = new Sequelize(dbConfig.DB, dbConfig.USER, dbConfig.PASSWORD, {
 });
 
 const db = {};
-
 db.Sequelize = Sequelize;
 db.sequelize = sequelize;
-
-db.tutorials = require("./tutorial.model.js")(sequelize, Sequelize);
+db.patients = require("./patient.model.js")(sequelize, Sequelize);
+db.offices = require("./office.model.js")(sequelize, Sequelize);
 
 module.exports = db;
