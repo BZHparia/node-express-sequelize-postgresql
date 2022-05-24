@@ -4,10 +4,13 @@ const cors = require("cors");
 const app = express();
 
 var corsOptions = {
-  origin: "http://localhost:4200"
+  origin: "http://localhost:4200",
+  // origin: "https://front-local.kube.intra.nehs-digital.com:4201",
+  // optionsSuccessStatus: 200 
 };
 
 app.use(cors(corsOptions));
+// app.use();
 
 // Parse requests of content-type - application/json
 app.use(express.json());
@@ -23,7 +26,7 @@ db.sequelize.sync();
 //   console.log("Drop and re-sync db.");
 // });
 
-// Default route
+// Default routes
 app.get("/", (req, res) => {
   res.json({ message: "Welcome to data app" });
 });
